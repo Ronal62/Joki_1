@@ -159,7 +159,7 @@ $nama = $_SESSION['nama'];
                 <li><a class="nav-link" href="media.php">Home</a></li>
                 <li><a class="nav-link" href="admin.php">Admin</a></li>
                 <li><a class="nav-link" href="buah.php">Buah</a></li>
-                <li><a class="nav-link" href="buah_masuk.php">Buah Masuk</a></li>
+                <li><a class="nav-link" href="penghitung_buah.php">Penghitung</a></li>
                 <li><a class="nav-link" href="buah_keluar.php">Buah Keluar</a></li>
                 <!-- <li class=active><a class="nav-link" href="media.php">Ecommerce Dashboard</a></li> -->
               </ul>

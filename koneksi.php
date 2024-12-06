@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "db_buah");
+$conn = mysqli_connect("localhost", "root", "", "db_penghitung_buah");
 
 function rupiah($angka)
 {
