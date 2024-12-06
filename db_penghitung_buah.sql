@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Des 2024 pada 20.10
+-- Waktu pembuatan: 06 Des 2024 pada 09.47
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -18,48 +18,47 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_buah`
+-- Database: `db_penghitung_buah`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Struktur dari tabel `buah`
 --
 
-CREATE TABLE `admin` (
-  `id_admin` int(11) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+CREATE TABLE `buah` (
+  `id_buah` int(11) NOT NULL,
+  `nama_buah` varchar(50) NOT NULL,
+  `satuan` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data untuk tabel `buah`
 --
 
-INSERT INTO `admin` (`id_admin`, `nama`, `username`, `password`) VALUES
-(2, 'ronal', 'ronal', 'ronal');
+INSERT INTO `buah` (`id_buah`, `nama_buah`, `satuan`) VALUES
+(3, 'Apel', '0.1');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indeks untuk tabel `buah`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
+ALTER TABLE `buah`
+  ADD PRIMARY KEY (`id_buah`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT untuk tabel `buah`
 --
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `buah`
+  MODIFY `id_buah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
