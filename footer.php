@@ -31,5 +31,61 @@
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script>
+    function ambilSatuan() {
+        // Ambil satuan dari atribut data-satuan pada opsi yang dipilih
+        const idBuah = document.getElementById("id_buah");
+        const satuan = idBuah.options[idBuah.selectedIndex].getAttribute("data-satuan");
+        document.getElementById("satuan").value = satuan || 0;
+
+        // Hitung ulang barang terjual jika ada stok digunakan
+        hitungBarangTerjual();
+    }
+
+    function hitungBarangTerjual() {
+        // Ambil nilai stok awal, stok akhir, dan satuan
+        const stokAwal = parseFloat(document.getElementById("stok_awal").value) || 0;
+        const stokAkhir = parseFloat(document.getElementById("stok_akhir").value) || 0;
+        const satuan = parseFloat(document.getElementById("satuan").value) || 0;
+
+        // Hitung stok digunakan
+        const stokDigunakan = stokAwal - stokAkhir;
+
+        // Hitung barang terjual
+        const barangTerjual = satuan > 0 ? stokDigunakan / satuan : 0;
+
+        // Periksa apakah hasilnya bilangan bulat atau desimal
+        document.getElementById("barang_terjual").value = 
+            Number.isInteger(barangTerjual) ? barangTerjual : barangTerjual.toFixed(2);
+    }
+
+    function formatRupiah(input) {
+        let value = input.value.replace(/\D/g, '');
+        value = value ? parseInt(value, 10).toLocaleString('id-ID') : '';
+        input.value = value;
+    }
+</script>
+
+
+  <script>
+    // Fungsi untuk memformat angka menjadi format rupiah
+    function formatRupiah(input) {
+        let value = input.value.replace(/[^,\d]/g, ""); // Hapus karakter non-digit
+        let parts = value.split(",");
+        let numberString = parts[0];
+        let remainder = numberString.length % 3;
+        let rupiah = numberString.substr(0, remainder);
+        let thousands = numberString.substr(remainder).match(/\d{3}/g);
+
+        if (thousands) {
+            let separator = remainder ? "." : "";
+            rupiah += separator + thousands.join(".");
+        }
+
+        input.value = rupiah + (parts[1] !== undefined ? "," + parts[1] : "");
+    }
+</script>
+
 </body>
+
 </html>

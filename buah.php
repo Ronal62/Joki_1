@@ -19,11 +19,11 @@ $result = mysqli_query($conn, $query);
                     <div class="card-header">
                         <h4><a href="tambah_buah.php" class="btn btn-primary">Tambah Buah</a></h4>
                         <div class="card-header-form">
-                            <form>
+                            <form method="GET" action="">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search">
+                                    <input type="text" class="form-control" name="search" placeholder="Search">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                                     </div>
                                 </div>
                             </form>
@@ -45,16 +45,16 @@ $result = mysqli_query($conn, $query);
                                     if (mysqli_num_rows($result) > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
                                             echo "<tr>";
-                                            echo "<td>" . $row['nama_buah'] . "</td>";
-                                            echo "<td>" . $row['satuan'] . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['nama_buah']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['satuan']) . "</td>";
                                             echo "<td>
-                                                    <a href='edit_buah.php?id=" . $row['id_buah'] . "' class='btn btn-warning'>Edit</a>
-                                                    <a href='hapus_buah.php?id=" . $row['id_buah'] . "' class='btn btn-danger' onclick=\"return confirm('Apakah Anda yakin ingin menghapus data ini?');\">Hapus</a>
+                                                  <a href='edit_buah.php?id_buah=" . $row['id_buah'] . "' class='btn btn-warning'>Edit</a>
+                                                  <a href='hapus_buah.php?id=" . $row['id_buah'] . "' class='btn btn-danger' onclick=\"return confirm('Apakah Anda yakin ingin menghapus data ini?');\">Hapus</a>
                                                   </td>";
                                             echo "</tr>";
                                         }
                                     } else {
-                                        echo "<tr><td colspan='4'>Tidak ada data tersedia</td></tr>";
+                                        echo "<tr><td colspan='3'>Tidak ada data tersedia</td></tr>";
                                     }
                                     ?>
                                 </tbody>

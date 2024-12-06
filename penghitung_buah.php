@@ -74,7 +74,6 @@ $result = mysqli_query($conn, $query);
                                                 <td>Rp <?php echo number_format($row['harga_akhir'], 0, ',', '.'); ?></td>
                                                 <td>Rp <?php echo number_format($row['harga_penggunaan'], 0, ',', '.'); ?></td>
                                                 <td>
-                                                    <a href="detail_penghitung.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Detail</a>
                                                     <a href="hapus_penghitung_buah.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
                                                 </td>
                                             </tr>

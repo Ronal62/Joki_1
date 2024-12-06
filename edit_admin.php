@@ -66,7 +66,7 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM admin WHERE id_adm
 include 'footer.php';
 ?>
 
-<?php include 'footer.php'; ?>
+
 
 <?php
 if (isset($_POST['edit'])) {
