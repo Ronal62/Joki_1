@@ -85,7 +85,7 @@ $nama = $_SESSION['nama'];
               <div class="search-item">
                 <a href="#">
                   <img class="mr-3 rounded" width="30" src="assets/img/products/product-2-50.png" alt="product">
-                  Drone X2 New Gen-7
+                  Drone X2 New Gen-
                 </a>
               </div>
               <div class="search-item">
@@ -146,10 +146,10 @@ $nama = $_SESSION['nama'];
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="media.php">Link Gacor</a>
+            <a href="media.php">Penghitung Buah</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="media.php">LG</a>
+            <a href="media.php">PB</a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>

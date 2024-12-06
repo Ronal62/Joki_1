@@ -123,7 +123,10 @@ $total_perhitungan_singkat = singkatAngka($total_perhitungan);
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h4>Data Penjualan Buah</h4>
+          <a href="export.php" class="btn btn-success">
+    <i class="fas fa-file-excel"></i> Export Data
+</a>
+
           </div>
           <div class="card-body p-0">
             <div class="table-responsive">
